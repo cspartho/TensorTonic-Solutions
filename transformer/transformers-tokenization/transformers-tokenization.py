@@ -44,13 +44,11 @@ class SimpleTokenizer:
         # YOUR CODE HERE
         token_ids_list = []
         words = text.lower().split()
-        print(self.word_to_id)
         for word in words:
             if word in self.word_to_id.keys():
                 token_ids_list.append(self.word_to_id[word])
             else:
                 token_ids_list.append(self.word_to_id['<UNK>'])
-        print(token_ids_list)
         return token_ids_list
         
     def decode(self, ids: List[int]) -> str:
